@@ -7,7 +7,7 @@
 class ofApp : public ofBaseApp{
 
 	public:
-		Spawner spawner1, spawner2, spawner3;
+		Spawner spawner;
 
 		ofApp();
 

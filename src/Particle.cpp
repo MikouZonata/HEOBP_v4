@@ -1,9 +1,7 @@
 #include "Particle.h"
 
-Particle::Particle(unsigned int myIndexTemp, vector<Particle>& myArrayTemp, ofPoint tempPosition)
+Particle::Particle(ofPoint tempPosition)
 {
-	myIndex = myIndexTemp;
-	myArrayPointer = &myArrayTemp;
 	SetValues(tempPosition);
 }
 
@@ -65,7 +63,7 @@ void Particle::Draw()
 }
 
 void Particle::Expire() {
-	myArrayPointer->erase(myArrayPointer->at(index));
+	isAlive = false;
 }
 
 Particle::~Particle()

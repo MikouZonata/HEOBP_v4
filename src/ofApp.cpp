@@ -7,23 +7,17 @@ ofApp::ofApp() {
 //--------------------------------------------------------------
 void ofApp::setup(){
 	ofBackground(ofColor(0, 0, 0, 255));
-	spawner1 = Spawner();
-	spawner2 = Spawner();
-	spawner3 = Spawner();
+	spawner = Spawner();
 }
 
 //--------------------------------------------------------------
 void ofApp::update(){
-	spawner1.Update();
-	spawner2.Update();
-	spawner3.Update();
+	spawner.Update();
 }
 
 //--------------------------------------------------------------
 void ofApp::draw(){
-	spawner1.Draw();
-	spawner2.Draw();
-	spawner3.Draw();
+	spawner.Draw();
 }
 
 //--------------------------------------------------------------

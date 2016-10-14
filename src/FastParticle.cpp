@@ -1,9 +1,6 @@
 #include "FastParticle.h"
 
-
-
-FastParticle::FastParticle()
-{
+FastParticle::FastParticle(){
 	DoubleSpeed();
 }
 
@@ -12,6 +9,6 @@ void FastParticle::DoubleSpeed(){
 }
 
 
-FastParticle::~FastParticle()
-{
+FastParticle::~FastParticle(){
+
 }

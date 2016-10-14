@@ -3,6 +3,7 @@
 Spawner::Spawner() {
 	spawnCounter = spawnTimer;
 	SetPattern();
+	myReaper = ParticleReaper(myParticles);
 }
 
 void Spawner::SetPattern() {
@@ -18,7 +19,9 @@ void Spawner::Update() {
 	SpawnParticle();
 
 	for (int i = 0; i < myParticles->size(); i++) {
-		myParticles->operator[](i).Update();
+		if (myParticles->at(i).isAlive == true) {
+			myParticles->at(i).Update();
+		}
 	}
 }
 
@@ -32,7 +35,7 @@ void Spawner::SpawnParticle() {
 
 	if (spawnCounter >= spawnTimer) {
 		if (myParticles->size() < maxParticles) {
-			myParticles->push_back(Particle(myParticles->size(), &myParticles, spawnPosition));
+			myParticles->push_back(Particle(spawnPosition));
 		}
 		spawnCounter = 0;
 	}
@@ -40,11 +43,12 @@ void Spawner::SpawnParticle() {
 
 void Spawner::Draw() {
 	for (int i = 0; i < myParticles->size(); i++) {
-		myParticles->operator[](i).Draw();
+		if (myParticles->at(i).isAlive == true) {
+			myParticles->at(i).Draw();
+		}
 	}
 }
 
 Spawner::~Spawner() {
 
 }
-//Cleans up the mess.

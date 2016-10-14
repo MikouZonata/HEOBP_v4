@@ -24,15 +24,13 @@ public:
 	ofColor auraColor = (255,255,255,20);
 	//Colors for the inside and outside of the circle in RGB and Alpha values.
 
-	vector<Particle>* myArrayPointer;
-	int myIndex;
-	//Pointer to the vector holding the particle.
-	//This particle's index number in its array.
+	bool isAlive = true;
+	//Has this particle expired?
 	
-	Particle(unsigned int, vector<Particle>&, ofPoint);
+	Particle(ofPoint);
 	//Calls SetValues to set the base values. See SetValues.
 	Particle();
-	//Default constructor to fix an error? C2512
+	//Default Constructor?...
 
 	virtual void SetValues(ofPoint);
 	//Sets position to tempPosition, received from Spawner.

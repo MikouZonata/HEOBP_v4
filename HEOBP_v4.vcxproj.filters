@@ -22,7 +22,13 @@
 		<ClCompile Include="src\Particle.cpp">
 			<Filter>src</Filter>
 		</ClCompile>
+		<ClCompile Include="src\ParticleReaper.cpp">
+			<Filter>src</Filter>
+		</ClCompile>
 		<ClCompile Include="src\Spawner.cpp">
+			<Filter>src</Filter>
+		</ClCompile>
+		<ClCompile Include="src\Test.cpp">
 			<Filter>src</Filter>
 		</ClCompile>
 	</ItemGroup>
@@ -47,7 +53,13 @@
 		<ClInclude Include="src\Particle.h">
 			<Filter>src</Filter>
 		</ClInclude>
+		<ClInclude Include="src\ParticleReaper.h">
+			<Filter>src</Filter>
+		</ClInclude>
 		<ClInclude Include="src\Spawner.h">
+			<Filter>src</Filter>
+		</ClInclude>
+		<ClInclude Include="src\Test.h">
 			<Filter>src</Filter>
 		</ClInclude>
 	</ItemGroup>

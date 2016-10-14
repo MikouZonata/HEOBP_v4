@@ -2,6 +2,8 @@
 
 #include "ofMain.h"
 #include "Particle.h"
+#include "ParticleReaper.h"
+#include <vector>
 
 class Spawner
 {
@@ -24,6 +26,8 @@ public:
 	//The vector for containing particles.
 	unsigned int maxParticles = 50;
 	//Maximum ammount of particles a spawner can create.
+
+	ParticleReaper myReaper;
 
 	Spawner();
 	//Calls SetPattern.

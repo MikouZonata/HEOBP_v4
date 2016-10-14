@@ -1,14 +1,9 @@
-﻿  BlinkingParticle.cpp
-  FastParticle.cpp
-  Particle.cpp
-  Spawner.cpp
-src\Particle.cpp(68): error C2664: 'std::_Vector_iterator<std::_Vector_val<std::_Simple_types<Particle>>> std::vector<Particle,std::allocator<_Ty>>::erase(std::_Vector_const_iterator<std::_Vector_val<std::_Simple_types<Particle>>>,std::_Vector_const_iterator<std::_Vector_val<std::_Simple_types<Particle>>>)': cannot convert argument 1 from 'Particle' to 'std::_Vector_const_iterator<std::_Vector_val<std::_Simple_types<Particle>>>'
-          with
-          [
-              _Ty=Particle
-          ]
-  src\Particle.cpp(68): note: No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
-src\Spawner.cpp(35): error C2440: '<function-style-cast>': cannot convert from 'initializer list' to 'Particle'
-  src\Spawner.cpp(35): note: No constructor could take the source type, or constructor overload resolution was ambiguous
-  main.cpp
+﻿  main.cpp
   ofApp.cpp
+  ParticleReaper.cpp
+  Spawner.cpp
+     Creating library bin\HEOBP_v4_debug.lib and object bin\HEOBP_v4_debug.exp
+BlinkingParticle.obj : error LNK2019: unresolved external symbol "public: __thiscall Particle::Particle(void)" (??0Particle@@QAE@XZ) referenced in function "public: __thiscall BlinkingParticle::BlinkingParticle(void)" (??0BlinkingParticle@@QAE@XZ)
+FastParticle.obj : error LNK2001: unresolved external symbol "public: __thiscall Particle::Particle(void)" (??0Particle@@QAE@XZ)
+Spawner.obj : error LNK2019: unresolved external symbol "public: __thiscall ParticleReaper::ParticleReaper(void)" (??0ParticleReaper@@QAE@XZ) referenced in function "public: __thiscall Spawner::Spawner(void)" (??0Spawner@@QAE@XZ)
+bin\HEOBP_v4_debug.exe : fatal error LNK1120: 2 unresolved externals

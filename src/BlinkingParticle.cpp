@@ -1,7 +1,6 @@
 #include "BlinkingParticle.h"
 
-BlinkingParticle::BlinkingParticle()
-{
+BlinkingParticle::BlinkingParticle(){
 
 }
 
@@ -14,7 +13,6 @@ void BlinkingParticle::Move() {
 	}
 }
 
-BlinkingParticle::~BlinkingParticle()
-{
+BlinkingParticle::~BlinkingParticle(){
 
 }
