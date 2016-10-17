@@ -5,14 +5,14 @@
 class Particle
 {
 public:
-	int index, pulseSpeed, minPulseSpeed, maxPulseSpeed, lifetime, minLifetime, maxLifetime, lifetimeCounter = 0, minSpeed, maxSpeed;
+	int index, pulseSpeed, minPulseSpeed, maxPulseSpeed, lifetime, minLifetime, maxLifetime, minSpeed, maxSpeed;
 	//Index number for this particle's location in the vector.
 	//The time in seconds a circle stays active before expiring.
 	//The minimum and maximum lifetime of a circle.
 	//The speed at which the circle expands and retracts in seconds/full cycle.
 	//The minimum and maximum values for both x and y speeds
 	
-	float  maxRadius = 8, currentRadius;
+	float  maxRadius = 8, currentRadius, pulseCounter = 0, lifetimeCounter = 0;
 	//The base radius of the circle.
 
 	ofPoint position, speed;

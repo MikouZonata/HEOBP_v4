@@ -1,9 +1,5 @@
-﻿  main.cpp
-  ofApp.cpp
-  ParticleReaper.cpp
-  Spawner.cpp
-     Creating library bin\HEOBP_v4_debug.lib and object bin\HEOBP_v4_debug.exp
-BlinkingParticle.obj : error LNK2019: unresolved external symbol "public: __thiscall Particle::Particle(void)" (??0Particle@@QAE@XZ) referenced in function "public: __thiscall BlinkingParticle::BlinkingParticle(void)" (??0BlinkingParticle@@QAE@XZ)
-FastParticle.obj : error LNK2001: unresolved external symbol "public: __thiscall Particle::Particle(void)" (??0Particle@@QAE@XZ)
-Spawner.obj : error LNK2019: unresolved external symbol "public: __thiscall ParticleReaper::ParticleReaper(void)" (??0ParticleReaper@@QAE@XZ) referenced in function "public: __thiscall Spawner::Spawner(void)" (??0Spawner@@QAE@XZ)
-bin\HEOBP_v4_debug.exe : fatal error LNK1120: 2 unresolved externals
+﻿  Spawner.cpp
+  HEOBP_v4.vcxproj -> C:\Users\Mikou\Desktop\Work\C++\of_v0.9.3_vs_release\apps\myApps\HEOBP_v4\bin\HEOBP_v4_debug.exe
+  HEOBP_v4.vcxproj -> bin\HEOBP_v4_debug.pdb (Full PDB)
+  
+  	                   9	C:\Users\Mikou\Desktop\Work\C++\of_v0.9.3_vs_release\export\vs\Win32\

@@ -8,12 +8,11 @@
 class Spawner
 {
 public:
-	float spawnRate, turnRate, currentRotation;
-	//Amount of circles spawned per minute.
+	float turnRate, currentRotation;
 	//The rotation speed of the spawner around its center in degrees/second.
 	//Self explanatory.
 
-	int spawnCounter = 0, spawnTimer = 8;
+	int spawnCounter = 0, spawnTimer;
 	//Adds up every frame.
 	//When spawnCounter >= spawnTimer a circle is spawned and spawnCounter resets to 0.
 
@@ -22,9 +21,9 @@ public:
 	//Base position of the spawner in the center of the screen.
 	//The current position at which circles are spawned if spawnCounter allows it. See RotateSpawner and SpawnCircle.
 
-	vector<Particle>* myParticles = new vector<Particle>;
+	vector<Particle*> myParticles;
 	//The vector for containing particles.
-	unsigned int maxParticles = 50;
+	unsigned int maxParticles;
 	//Maximum ammount of particles a spawner can create.
 
 	ParticleReaper myReaper;
@@ -32,7 +31,7 @@ public:
 	Spawner();
 	//Calls SetPattern.
 
-	void SetPattern();
+	void SetValues();
 	//Gets screen size (height and width in px).
 	//Determines screen center and spawning pattern radius.
 

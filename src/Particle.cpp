@@ -5,23 +5,33 @@ Particle::Particle(ofPoint tempPosition)
 	SetValues(tempPosition);
 }
 
+Particle::Particle() {
+	//Default Constructor
+	SetValues(ofPoint(0, 0));
+}
+
 //STEP RIGHT UP FOLKS, SET YA VALUES HERE
 void Particle::SetValues(ofPoint tempPosition)
 {
 	position = tempPosition;
 
-	minLifetime = 1;
-	maxLifetime = 6;
+	minLifetime = 2;
+	maxLifetime = 5;
 	lifetime = ofRandom(maxLifetime - minLifetime) + minLifetime;
 
 	minPulseSpeed = 1;
 	maxPulseSpeed = 3;
 	pulseSpeed = ofRandom(maxPulseSpeed - minPulseSpeed) + minPulseSpeed;
 
-	minSpeed = -1.5;
-	maxSpeed = 1.5;
+	minSpeed = -1.8;
+	maxSpeed = 1.8;
+
 	speed.x = ofRandom(maxSpeed - minSpeed) + minSpeed;
 	speed.y = ofRandom(maxSpeed - minSpeed) + minSpeed;
+	while (speed.x == 0 && speed.y == 0) {
+		speed.x = ofRandom(maxSpeed - minSpeed) + minSpeed;
+		speed.y = ofRandom(maxSpeed - minSpeed) + minSpeed;
+	}
 
 	outsideColor.r = ofRandom(255);
 	outsideColor.g = ofRandom(255);
@@ -33,9 +43,9 @@ void Particle::Update()
 {
 	Move();
 
-	++lifetimeCounter;
+	lifetimeCounter += ofGetLastFrameTime();
 	if (lifetime <= lifetimeCounter) {
-
+		Expire();
 	}
 
 	Pulse();
@@ -47,7 +57,8 @@ void Particle::Move() {
 }
 
 void Particle::Pulse() {
-	currentRadius = abs(sin(ofGetElapsedTimef() * pulseSpeed)) * maxRadius;
+	pulseCounter += ofGetLastFrameTime();
+	currentRadius = abs(sin(pulseCounter * pulseSpeed)) * maxRadius;
 }
 
 void Particle::Draw()

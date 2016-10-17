@@ -8,14 +8,14 @@
 class ParticleReaper
 {
 public:
-	vector<Particle>* myParticles;
+	vector<Particle*> myParticles;
 
-	ParticleReaper(vector<Particle>*);
+	ParticleReaper(vector<Particle*>);
 	ParticleReaper();
 
 	void Update();
 
-	void CleanUp(vector<Particle>::iterator);
+	void CleanUp(vector<Particle*>::iterator);
 
 	~ParticleReaper();
 };
