@@ -3,10 +3,9 @@
 
 class FastParticle : public Particle {
 
-	using Particle::Particle;
 
 public:
-	FastParticle();
+	FastParticle(ofPoint point);
 
 	void DoubleSpeed();
 

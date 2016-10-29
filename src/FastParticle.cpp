@@ -1,11 +1,11 @@
 #include "FastParticle.h"
 
-FastParticle::FastParticle(){
+FastParticle::FastParticle(ofPoint point) : Particle(point) {
 	DoubleSpeed();
 }
 
 void FastParticle::DoubleSpeed(){
-	speed *= 2;
+	speed *= 4;
 }
 
 

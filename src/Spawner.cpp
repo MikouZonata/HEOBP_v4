@@ -6,26 +6,28 @@ Spawner::Spawner() {
 }
 
 void Spawner::SetValues() {
-	spawnTimer = 2;
-	turnRate = 2;
-	maxParticles = 90;
-
 	basePosition = ofPoint(ofGetWindowWidth() / 2, ofGetWindowHeight() / 2);
 	spawnRadius = ofVec2f(0, 240);
 }
 
-void Spawner::Update() {
+Spawner* Spawner::Instance() {
+	if (!singleton) {
+		singleton = new Spawner();
+	}
+	return singleton;
+}
+
+void Spawner::Update(){
 	RotateSpawnPosition();
 	SpawnParticle();
 
-	for (int i = 0; i < myParticles.size(); i++) {
-		if (myParticles.at(i)->isAlive == true) {
-			myParticles.at(i)->Update();
+	for (vector<Particle*>::iterator i = myParticles->begin(); i != myParticles->end(); i++) {
+		if ((*i)->isAlive == true) {
+			(*i)->Update();
 		}
 	}
 
-	myReaper.Update();
-	cout << "Particle vector size: " << myParticles.size() << "\n";
+	myReaper.SearchAndDestroy();
 }
 
 void Spawner::RotateSpawnPosition() {
@@ -37,8 +39,22 @@ void Spawner::SpawnParticle() {
 	++spawnCounter;
 
 	if (spawnCounter >= spawnTimer) {
-		if (myParticles.size() < maxParticles) {
-			myParticles.push_back(new Particle(spawnPosition));
+		if (myParticles->size() < maxParticles) {
+			unsigned int particlePicker = ofRandom(3) / 1;
+			switch (particlePicker) {
+			case 0:
+				myParticles->push_back(new Particle(spawnPosition));
+				break;
+			case 1:
+				myParticles->push_back(new FastParticle(spawnPosition));
+				break;
+			case 2:
+				myParticles->push_back(new ColorShiftingParticle(spawnPosition));
+				break;
+			default:
+				break;
+			}
+
 			spawnRadius.y *= -1;
 			spawnRadius.x *= -1;
 		}
@@ -46,13 +62,15 @@ void Spawner::SpawnParticle() {
 	}
 }
 
-void Spawner::Draw() {
-	for (vector<Particle*>::iterator i = myParticles.begin(); i != myParticles.end(); i++) {
+void Spawner::Draw() const{
+	for (vector<Particle*>::iterator i = myParticles->begin(); i != myParticles->end(); i++) {
 		if ((*i)->isAlive == true) {
 			(*i)->Draw();
 		}
 	}
 }
+
+Spawner* Spawner::singleton = 0;
 
 Spawner::~Spawner() {
 

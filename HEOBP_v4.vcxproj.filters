@@ -7,7 +7,7 @@
 		<ClCompile Include="src\main.cpp">
 			<Filter>src</Filter>
 		</ClCompile>
-		<ClCompile Include="src\BlinkingParticle.cpp">
+		<ClCompile Include="src\ColorShiftingParticle.cpp">
 			<Filter>src</Filter>
 		</ClCompile>
 		<ClCompile Include="src\FastParticle.cpp">
@@ -28,9 +28,6 @@
 		<ClCompile Include="src\Spawner.cpp">
 			<Filter>src</Filter>
 		</ClCompile>
-		<ClCompile Include="src\Test.cpp">
-			<Filter>src</Filter>
-		</ClCompile>
 	</ItemGroup>
 	<ItemGroup>
 		<Filter Include="src">
@@ -41,7 +38,7 @@
 		<ClInclude Include="src\ofApp.h">
 			<Filter>src</Filter>
 		</ClInclude>
-		<ClInclude Include="src\BlinkingParticle.h">
+		<ClInclude Include="src\ColorShiftingParticle.h">
 			<Filter>src</Filter>
 		</ClInclude>
 		<ClInclude Include="src\FastParticle.h">
@@ -57,9 +54,6 @@
 			<Filter>src</Filter>
 		</ClInclude>
 		<ClInclude Include="src\Spawner.h">
-			<Filter>src</Filter>
-		</ClInclude>
-		<ClInclude Include="src\Test.h">
 			<Filter>src</Filter>
 		</ClInclude>
 	</ItemGroup>

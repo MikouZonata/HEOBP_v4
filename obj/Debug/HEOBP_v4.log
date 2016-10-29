@@ -1,4 +1,10 @@
-﻿  Spawner.cpp
+﻿  ColorShiftingParticle.cpp
+  FastParticle.cpp
+  Particle.cpp
+  ParticleReaper.cpp
+  Spawner.cpp
+  main.cpp
+  ofApp.cpp
   HEOBP_v4.vcxproj -> C:\Users\Mikou\Desktop\Work\C++\of_v0.9.3_vs_release\apps\myApps\HEOBP_v4\bin\HEOBP_v4_debug.exe
   HEOBP_v4.vcxproj -> bin\HEOBP_v4_debug.pdb (Full PDB)
   
